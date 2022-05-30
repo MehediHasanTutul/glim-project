@@ -9,9 +9,19 @@ from sklearn.metrics import confusion_matrix
 
 # import matplotlib.pyplot as plt
 #This is a workarround
+im = Image.open('icon.jpg')
+st.set_page_config(
+    page_title="GLIMP PROJECT",
+    page_icon=im,
+    layout="wide",
+)
+
 st.markdown(
      """
      <style>
+     #MainMenu {visibility: hidden;}
+     footer {visibility: hidden;}
+     </style>
      [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
          width: 450px;
        }
