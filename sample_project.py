@@ -11,7 +11,7 @@ from PIL import Image
 #This is a workarround
 im = Image.open('icon.jpg')
 st.set_page_config(
-    page_title="GLIMP PROJECT",
+    page_title="GLIM PROJECT",
     page_icon=im,
     layout="wide",
 )
