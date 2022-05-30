@@ -43,8 +43,8 @@ inputs = {
     'inputs_glim_subset':['GLIM1', 'GLIM3', 'GLIM5', 'GLIM10', 'GLIM13', 'GLIM14', 'GLIM19'],
     'inputs_glim_subset_no_muscle_mass':['GLIM1', 'GLIM2', 'GLIM3', 'GLIM4', 'GLIM7', 'GLIM8', 'GLIM10', 'GLIM11', 'GLIM16']
     }
-
-file_name = 'https://raw.githubusercontent.com/MehediHasanTutul/glim-project/Boss/sample_input.csv'
+#https://raw.githubusercontent.com/MehediHasanTutul/glim-project/Boss/
+file_name = 'sample_input.csv'
 
 
 
@@ -105,4 +105,4 @@ if st.checkbox('show variable importance'):
 
 if st.checkbox('show tree structure'):
     
-    st.image(Image.open(f'{path}_tree.png'))
+    st.image(Image.open(f'{modelname}_tree.png'))
