@@ -21,7 +21,6 @@ st.markdown(
      <style>
      #MainMenu {visibility: hidden;}
      footer {visibility: hidden;}
-     </style>
      [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
          width: 450px;
        }
