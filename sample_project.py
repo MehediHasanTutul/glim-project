@@ -101,7 +101,7 @@ if y is not None and len(y_pred_nb)>10:
 from PIL import Image
 
 if st.checkbox('show variable importance'):
-    st.image(Image.open(f'{path}_var_imp.png'))
+    st.image(Image.open(f'{modelname}_var_imp.png'))
 
 if st.checkbox('show tree structure'):
     
