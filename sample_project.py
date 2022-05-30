@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from pickle import load
 from sklearn.metrics import confusion_matrix
-
+from PIL import Image
 
 
 
@@ -107,7 +107,7 @@ if y is not None and len(y_pred_nb)>10:
 
 
 
-from PIL import Image
+
 
 if st.checkbox('show variable importance'):
     st.image(Image.open(f'{modelname}_var_imp.png'))
