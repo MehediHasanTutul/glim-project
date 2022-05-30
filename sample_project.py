@@ -36,7 +36,7 @@ output_list = ['patient_status', 'unplanned_admission']
 modelname = f'model_{input_feature}_output_{output_type}'
 path = f'https://raw.githubusercontent.com/MehediHasanTutul/glim-project/Boss/{modelname}'
 
-model = load(f'{path}.joblib')
+model = load(open(f'{path}.pkl', 'rb'))
 
 inputs = {
     'inputs_glim_1_21':['GLIM1', 'GLIM2', 'GLIM3', 'GLIM4', 'GLIM5', 'GLIM6', 'GLIM7', 'GLIM8', 'GLIM9', 'GLIM10', 'GLIM11', 'GLIM12', 'GLIM13', 'GLIM14', 'GLIM15', 'GLIM16', 'GLIM17', 'GLIM18', 'GLIM19', 'GLIM20', 'GLIM21'],
