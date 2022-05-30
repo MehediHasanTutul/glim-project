@@ -34,7 +34,7 @@ inputs_list = ['inputs_glim_1_21', 'inputs_glim_subset', 'inputs_glim_subset_no_
 output_list = ['patient_status', 'unplanned_admission']
 
 modelname = f'model_{input_feature}_output_{output_type}'
-path = f'https://combinatronics.com/MehediHasanTutul/glim-project/Boss/{modelname}'
+path = f'https://raw.githubusercontent.com/MehediHasanTutul/glim-project/Boss/{modelname}'
 
 model = load(f'{path}.joblib')
 
@@ -44,7 +44,7 @@ inputs = {
     'inputs_glim_subset_no_muscle_mass':['GLIM1', 'GLIM2', 'GLIM3', 'GLIM4', 'GLIM7', 'GLIM8', 'GLIM10', 'GLIM11', 'GLIM16']
     }
 
-file_name = 'https://combinatronics.com/MehediHasanTutul/glim-project/Boss/sample_input.csv'
+file_name = 'https://raw.githubusercontent.com/MehediHasanTutul/glim-project/Boss/sample_input.csv'
 
 
 
