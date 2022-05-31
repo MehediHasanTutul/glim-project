@@ -75,7 +75,8 @@ inputs = {
 #https://raw.githubusercontent.com/MehediHasanTutul/glim-project/Boss/
 file_name = 'sample_input.csv'
 
-
+st.sidebar.write('**Selected Features:**')
+st.sidebar.markdown(inputs[input_feature])
 
 @st.cache()
 def rescale_output(file_name):
