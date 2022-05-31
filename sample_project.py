@@ -31,8 +31,11 @@ st.markdown(
         </style>
         """,
         unsafe_allow_html=True)
-uploaded = st.sidebar.file_uploader("please upload only .csv file as input", type={"csv"})
 
+uploaded = st.sidebar.file_uploader("please upload only .csv file as input", type={"csv"})
+st.sidebar.markdown("""
+[Example CSV input file](sample_input.csv)
+""")
 
 genre = st.sidebar.radio(
      "Choose input features:",
