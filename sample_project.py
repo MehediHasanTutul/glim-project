@@ -33,10 +33,26 @@ st.markdown(
         unsafe_allow_html=True)
 uploaded = st.sidebar.file_uploader("please upload only .csv file as input", type={"csv"})
 
-input_feature = st.sidebar.selectbox('Choose input features', ['inputs_glim_1_21', 'inputs_glim_subset', 'inputs_glim_subset_no_muscle_mass'])
 
-output_type = st.sidebar.selectbox('Choose output type', ['patient_status', 'unplanned_admission'])
+genre = st.sidebar.radio(
+     "Choose input features:",
+     ('All GLIM Features', 'Subset of Features', 'Subset of Features without Muscle Mass'))
 
+if genre=='All GLIM Features':
+    input_feature = 'inputs_glim_1_21'
+elif genre=='Subset of Features':
+    input_feature = 'inputs_glim_subset'
+else:
+    input_feature = 'inputs_glim_subset_no_muscle_mass'
+    
+output_button= st.sidebar.radio(
+     "Choose output type:",
+     ('Patient Status', 'Unplanned Admission'))
+if output_button=='Patient Status':
+    output_type = 'patient_status'
+else:
+    output_type = 'unplanned_admission'
+    
 
 inputs_list = ['inputs_glim_1_21', 'inputs_glim_subset', 'inputs_glim_subset_no_muscle_mass']
 # modelnames_list = ['inputs_glim_1_21', 'inputs_glim_subset', 'inputs_glim_subset_no_muscle_mass']
