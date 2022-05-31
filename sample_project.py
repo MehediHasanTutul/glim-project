@@ -114,7 +114,7 @@ df = pd.DataFrame({output_type:y_pred},index=[np.linspace(1,len(y_pred_nb),len(y
 # cont = st.container()
 with col1:
     st.write('**Network Predictions:**')
-    st.table(df)
+    st.write(df)
 
 if y is not None and len(y_pred_nb)>10:
     tn, fp, fn, tp = confusion_matrix(y, y_pred_nb).ravel()
