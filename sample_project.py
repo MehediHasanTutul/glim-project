@@ -90,11 +90,13 @@ def rescale_output(file_name):
 
 y=None
 
-if uploaded is None:
-    df_main = rescale_output(file_name)
-    st.write('**Awaiting CSV file to be uploaded. Currently showing output using sample input.**')
-else:
-    df_main = rescale_output(uploaded)
+# if uploaded is None:
+#     df_main = rescale_output(file_name)
+#     st.write('**Awaiting CSV file to be uploaded. Currently showing output using sample input.**')
+# else:
+#     df_main = rescale_output(uploaded)
+    
+df_main = rescale_output(file_name)
 if output_type in df_main.columns:
     y = df_main[output_type].to_numpy()
 
