@@ -75,8 +75,15 @@ inputs = {
 #https://raw.githubusercontent.com/MehediHasanTutul/glim-project/Boss/
 file_name = 'sample_input.csv'
 
-st.sidebar.write('**Selected Features:**')
-st.sidebar.markdown(inputs[input_feature])
+st.sidebar.write('**Select Feature values:**')
+c = st.sidebar.columns(5)   # 1,c2,c3,c4,c5
+i=0
+for feat in inputs[input_feature]:
+    c[int(i%5)].radio(feat,(0,1))
+    i = i+1
+
+# st.sidebar.write('**Selected Features:**')
+# st.sidebar.markdown(inputs[input_feature])
 
 @st.cache()
 def rescale_output(file_name):
