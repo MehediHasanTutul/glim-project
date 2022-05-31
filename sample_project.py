@@ -32,11 +32,11 @@ st.markdown(
         """,
         unsafe_allow_html=True)
 
-st.sidebar.markdown("""
-[Example CSV input file](https://raw.githubusercontent.com/MehediHasanTutul/glim-project/Boss/sample_input.csv)
-""")
+# st.sidebar.markdown("""
+# [Example CSV input file](https://raw.githubusercontent.com/MehediHasanTutul/glim-project/Boss/sample_input.csv)
+# """)
 
-uploaded = st.sidebar.file_uploader("please upload only .csv file as input", type={"csv"})
+# uploaded = st.sidebar.file_uploader("please upload only .csv file as input", type={"csv"})
 
 genre = st.sidebar.radio(
      "Choose input features:",
