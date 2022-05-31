@@ -34,7 +34,7 @@ st.markdown(
 
 uploaded = st.sidebar.file_uploader("please upload only .csv file as input", type={"csv"})
 st.sidebar.markdown("""
-[Example CSV input file](sample_input.csv)
+[Example CSV input file](https://raw.githubusercontent.com/MehediHasanTutul/glim-project/Boss/sample_input.csv)
 """)
 
 genre = st.sidebar.radio(
