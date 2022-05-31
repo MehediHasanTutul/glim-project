@@ -102,14 +102,19 @@ if output_type in df_main.columns:
 X = df_main[inputs[input_feature]]
 y_pred_nb = model.predict(X.to_numpy())
 
+y_pred = np.empty_like(y_pred_nb)
+if output_type=='patient_status':
+    y_pred[y_pred_nb==1]=2
+    y_pred[y_pred_nb==0]=1
+    
 col1, col2 = st.columns(2)
 
-df = pd.DataFrame({output_type:y_pred_nb},index=[np.linspace(1,len(y_pred_nb),len(y_pred_nb))])
+df = pd.DataFrame({output_type:y_pred},index=[np.linspace(1,len(y_pred_nb),len(y_pred_nb))])
 
 # cont = st.container()
 with col1:
     st.write('**Network Predictions:**')
-    st.write(df)
+    st.table(df)
 
 if y is not None and len(y_pred_nb)>10:
     tn, fp, fn, tp = confusion_matrix(y, y_pred_nb).ravel()
