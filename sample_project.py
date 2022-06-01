@@ -78,21 +78,24 @@ file_name = 'sample_input.csv'
 st.sidebar.write('**Select Feature values:**')
 c = st.sidebar.columns(5)   # 1,c2,c3,c4,c5
 i=0
+X = {}
 for feat in inputs[input_feature]:
-    c[int(i%5)].radio(feat,(0,1))
+    X[feat]=[int(c[int(i%5)].radio(feat,(0,1)))]
     i = i+1
+X= pd.DataFrame(X)
+
 
 # st.sidebar.write('**Selected Features:**')
 # st.sidebar.markdown(inputs[input_feature])
 
-@st.cache()
-def rescale_output(file_name):
-    df_main = pd.read_csv(file_name)
-    if 'patient_status' in df_main.columns:
-        df_main.loc[df_main['patient_status']==1,'patient_status']=0
-        df_main.loc[df_main['patient_status']==2,'patient_status']=1
+# @st.cache()
+# def rescale_output(file_name):
+#     df_main = pd.read_csv(file_name)
+#     if 'patient_status' in df_main.columns:
+#         df_main.loc[df_main['patient_status']==1,'patient_status']=0
+#         df_main.loc[df_main['patient_status']==2,'patient_status']=1
        
-    return df_main
+#     return df_main
 
 
 y=None
@@ -103,12 +106,12 @@ y=None
 # else:
 #     df_main = rescale_output(uploaded)
     
-df_main = rescale_output(file_name)
-if output_type in df_main.columns:
-    y = df_main[output_type].to_numpy()
+# df_main = rescale_output(file_name)
+# if output_type in df_main.columns:
+#     y = df_main[output_type].to_numpy()
 
-# 
-X = df_main[inputs[input_feature]]
+# # 
+# X = df_main[inputs[input_feature]]
 y_pred_nb = model.predict(X.to_numpy())
 
 y_pred = np.empty_like(y_pred_nb)
