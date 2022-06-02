@@ -37,7 +37,7 @@ st.markdown(
 # """)
 
 # uploaded = st.sidebar.file_uploader("please upload only .csv file as input", type={"csv"})
-st.title("An intelligent online platform to predict adverse outcomes from cancer-related malnutrition using the GLIM criteria")
+st.subtitle("An intelligent online platform to predict adverse outcomes from cancer-related malnutrition using the GLIM criteria")
 genre = st.sidebar.radio(
      "Choose input features:",
      ('All GLIM Features', 'Subset of Features', 'Subset of Features without Muscle Mass'))
@@ -124,8 +124,9 @@ col1, col2 = st.columns(2)
 df = pd.DataFrame({output_type:y_pred},index=[np.linspace(1,len(y_pred_nb),len(y_pred_nb))])
 
 # cont = st.container()
+st.write(X)
 with col1:
-    st.write('**Network Predictions:**')
+    st.write('**Prediction:**')
     st.write(df)
 
 if y is not None and len(y_pred_nb)>10:
