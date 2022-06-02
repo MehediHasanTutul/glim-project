@@ -1,6 +1,10 @@
 mkdir -p ~/.streamlit/
 
-echo "\
+echo "[theme]
+primaryColor='#F63366'
+backgroundColor='#FFFFFF'
+secondaryBackgroundColor='#F0F2F6'
+textColor='#262730'
 [server]\n\
 port = $PORT\n\
 enableCORS = false\n\
