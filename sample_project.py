@@ -124,6 +124,7 @@ col1, col2 = st.columns(2)
 df = pd.DataFrame({output_type:y_pred},index=[np.linspace(1,len(y_pred_nb),len(y_pred_nb))])
 
 # cont = st.container()
+st.write('**Selected Inputs:**')
 st.write(X)
 with col1:
     st.write('**Prediction:**')
