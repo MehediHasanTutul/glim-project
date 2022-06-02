@@ -157,5 +157,8 @@ if st.checkbox('show variable importance'):
     st.image(Image.open(f'{modelname}_var_imp.png'))
 
 if st.checkbox('show tree structure'):
-    
+    st.write('**decision path:**')
+    a=model.decision_path(X.to_numpy())
+    st.write(pd.DataFrame(a.toarray()))
+    st.write('**tree structure:**')
     st.image(Image.open(f'{modelname}_tree.png'))
