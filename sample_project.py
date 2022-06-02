@@ -37,7 +37,7 @@ st.markdown(
 # """)
 
 # uploaded = st.sidebar.file_uploader("please upload only .csv file as input", type={"csv"})
-
+st.title("An intelligent online platform to predict adverse outcomes from cancer-related malnutrition using the GLIM criteria")
 genre = st.sidebar.radio(
      "Choose input features:",
      ('All GLIM Features', 'Subset of Features', 'Subset of Features without Muscle Mass'))
