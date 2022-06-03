@@ -160,6 +160,6 @@ if st.checkbox('show variable importance'):
 if st.checkbox('show tree structure'):
     st.write('**decision path:**')
     a=model.decision_path(X.to_numpy())
-    st.write(pd.DataFrame(a.toarray()))
+    st.write(pd.DataFrame(a.toarray(),columns=[f'node #{b}' for b in range(len(a.toarray()[0]))]))
     st.write('**tree structure:**')
     st.image(Image.open(f'{modelname}_tree.png'))
