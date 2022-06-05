@@ -112,7 +112,7 @@ y=None
 
 # # 
 # X = df_main[inputs[input_feature]]
-y_pred_nb = model.predict(X.to_numpy())
+y_pred_nb = model.predict(X)
 
 y_pred = np.empty_like(y_pred_nb)
 if output_type=='patient_status':
@@ -123,7 +123,7 @@ if output_type=='patient_status':
 st.write('**Selected Inputs:**')
 st.write(X)
 
-a=model.predict_proba(X.to_numpy())
+a=model.predict_proba(X)
 col1, col2 = st.columns(2)
 
 df = pd.DataFrame({output_type:y_pred,'probability score':a.max(1)},index=[np.linspace(1,len(y_pred_nb),len(y_pred_nb))])
@@ -159,7 +159,7 @@ if st.checkbox('show variable importance'):
 
 if st.checkbox('show tree structure'):
     st.write('**decision path:**')
-    a=model.decision_path(X.to_numpy())
+    a=model.decision_path(X)
     st.write(pd.DataFrame(a.toarray(),columns=[f'node #{b}' for b in range(len(a.toarray()[0]))]))
     st.write('**tree structure:**')
     st.image(Image.open(f'{modelname}_tree.png'))
