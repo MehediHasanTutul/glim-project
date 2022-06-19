@@ -40,7 +40,7 @@ st.markdown(
 # st.subheader("**An intelligent online platform to predict adverse outcomes from cancer-related malnutrition using the GLIM criteria**")
 col1, col2, col3 = st.columns([1, 8, 1])
 col1.image(Image.open('ipan.png'),width=100)
-col2.markdown("<h3 style='text-align: center; color: black;'>An intelligent online platform to predict adverse outcomes from cancer-related malnutrition using the GLIM criteria</h3>", unsafe_allow_html=True)
+col2.markdown("<h4 style='text-align: center; color: black;'>An intelligent online platform to predict adverse outcomes from cancer-related malnutrition using the GLIM criteria</h4>", unsafe_allow_html=True)
 col3.image(Image.open('iisri.png'),width=100)
 
 genre = st.sidebar.radio(
